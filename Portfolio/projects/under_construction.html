@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Full Screen Image</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        img {
+            width: auto;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+    <script>
+        const theme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+    </script>
+</head>
+
+<body>
+    <p>
+        work in progress, mind the gap 
+        <a href="../index.html#projects">Go Back?</a>
+
+    </p>
+    <img src="construction_image.png" alt="Whoops image isn't loading. Under construction pls leave">
+</body>
+
+</html>

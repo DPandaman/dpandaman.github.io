@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Project One | Devanshu's Portfolio </title>
+    <script>
+        const theme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+    </script>
+    <link rel="stylesheet" href="../style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="../index.html" class="logo">Devanshu</a>
+        <nav class="navbar">
+            <a href="../index.html#projects">Go Back?</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <h2>van Emde Boas Tree</h2>
+        <p>Trees are great, but they get pretty slow and inefficient when a lot of data is added. As a result, van Emde Boas trees 
+            caught my attention as they promised <i>O(log(log(U)))</i> runtime. This project aimed to understand the fundamental 
+            structure of how a van Emde Boas (vEB) works, what makes it so special, and why they are not a popular choice for 
+            software development.
+        </p>
+
+        <br></br>
+    
+        <ul style="padding-left: 2em;">
+            <li><a href="../random/Pandya_vEBTree.pdf" download><u>Here</u></a> is the full PDF report on this project</li>
+            <li><a href="https://github.com/DPandaman/van-Emde-Boas-Tree"><u>Here</u></a> is the GitHub repo with the C++ code used to creating and testing the tree</li>
+        </ul>
+        
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Devanshu | Thanks for checking out this project!</p>
+    </footer>
+</body>
+
+</html>
