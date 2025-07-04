@@ -1,3 +1,6 @@
+/* MAIN */
+
+
 /* Base Reset */
 * {
   margin: 0;
@@ -37,6 +40,7 @@ body {
 }
 
 .header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,7 +49,9 @@ body {
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 997;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -82,6 +88,7 @@ body {
 
 .intro {
   display: flex;
+  flex: 0.5;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -114,19 +121,19 @@ body {
   margin-bottom: 1rem;
   color: var(#f5f5ff);
   flex: 1;
-
 }
 
 .intro-img {
-  width: 50%;
+  display: flex;
   flex: 1;
+  margin: auto; 
 }
 
 .intro-img img {
   width: 100%;
   border-radius: 20px;
-  border-radius: 5%
-
+  border-radius: 5%;
+  margin: auto;
 }
 
 .intro-text a {
@@ -143,14 +150,19 @@ a {
   background: none;
 }
 
+#home {
+  height: 100vh;
+  pointer-events:none;
+} 
+
 .section {
-  
   padding: 2rem 2rem;
   background-color: var(--section-bg);
   margin: 2rem 0;
   border-radius: 15px;
   margin-left: 5%;
   margin-right: 5%;
+  z-index: 99;
 }
 
 .section h2 {
@@ -168,15 +180,148 @@ a {
 }
 
 .section::after {
-    content: "";
-    display: block;
-    clear: both;
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .section img {
   border-radius: 10px;
 }
 
+.static-intro {
+  font-family: 'Roboto', monospace;
+  font-size: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: left;
+  width: 20ch;
+}
+
+/* ABOUT ME */
+#aboutme {
+  display: flex;
+  align-items: center;  
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-text  {
+  /* flex: 0.5; */
+  width: 50%
+}
+
+
+/* TECH STACK */
+#stackHolder {
+  display: flex;
+  /* gap: 3%; */
+}
+
+.scene {
+  position: relative;
+  margin: 0 auto;
+  /* border: 0.5em solid purple; */
+  width: 70%;
+  height: 140px;
+  margin-top: 2%;
+  margin-bottom: 3.5rem;
+  perspective: 1000px;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  /* position: absolute; */
+  align-items: center;
+  transform: translateZ(-288px);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+  
+}
+
+.carousel__cell {
+  position: absolute;
+  width: 190px;
+  height: 120px;
+  left: 40%;
+  top: 5%; 
+  line-height: 116px;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  transition: transform 1.5s, opacity 1s;
+  border-radius: 25px;
+}
+
+.carousel__cell img {
+  width: 70%;
+  height: auto;
+  border-radius: 25%;
+}
+
+.carousel__cell img:hover {
+  width: 80%;
+  height: auto;
+  transform: translateY(-5px);
+  /* box-shadow: 0 20px 20px rgba(0, 204, 255, 0.4); */
+}
+
+
+/* For Angle: if you have 4 images, then divide 360 by (4 + 1) and work that way */
+.carousel__cell:nth-child(1) { transform: rotateY( 0deg) translateZ(288px); }
+.carousel__cell:nth-child(2) { transform: rotateY( 40deg) translateZ(288px); }
+.carousel__cell:nth-child(3) { transform: rotateY( 80deg) translateZ(288px); }
+.carousel__cell:nth-child(4) { transform: rotateY(120deg) translateZ(288px); }
+.carousel__cell:nth-child(5) { transform: rotateY(160deg) translateZ(288px); }
+.carousel__cell:nth-child(6) { transform: rotateY(200deg) translateZ(288px); }
+.carousel__cell:nth-child(7) { transform: rotateY(240deg) translateZ(288px); } 
+.carousel__cell:nth-child(8) { transform: rotateY(280deg) translateZ(288px); }
+.carousel__cell:nth-child(9) { transform: rotateY(320deg) translateZ(288px); } 
+
+
+#stackDetails {
+  width: 30%;
+  background: rgba(230, 229, 229, 0.14);
+  border-radius: 15px;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+
+#detailTitle {
+  display: flex;
+  justify-content: center;
+}
+
+#stackDetails h3 {
+  color: var(--accent-color);
+  margin-top: 6%;
+}
+
+#detailText {
+  display: flex;
+  justify-content: center;
+}
+
+#usedIn {
+  color: var(--text-color);
+  font-size: 0.8rem;
+}
+
+#projectsUsed {
+  margin-left: 3%;
+  font-weight: 500;
+
+}
+
+#detailText {
+  transition: opacity 1s;
+}
+
+
+/* PROJECT STUFF */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
@@ -210,7 +355,6 @@ a {
   display: block;
   margin: 0 auto;
   width: 100%;
-
 }
 
 .project-title {
@@ -223,61 +367,13 @@ a {
   text-decoration: underline;
 }
 
-.footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  margin-top: 4rem;
-  
-}
-
-.static-intro {
-  font-family: 'Roboto', monospace;
-  font-size: 2.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-align: left;
-  width: 20ch;
-}
-
-#aboutme {
-  display: flex;
-  align-items: center;  
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.about-text  {
-  flex: 0.5;
-}
-
-.video-wrapper {
-  flex: 0.5;
-  border-radius: 50px;
-}
-
-.video-wrapper video {  
-  width: 100%;
-  
-}
-
-.tag-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1%;
-  padding-bottom: 2%;
-}
-
+/* TAGS */
 #fabricationtag {
   display:inline-block; 
   padding-left: 2%;
   padding-right: 2%;
   height:20px; 
-  background-color:rgba(184, 93, 19, 0.733); 
+  background-color:rgba(191, 87, 2, 0.733); 
   color: var(--text-color);  
   text-align:center; 
   line-height:20px; 
@@ -316,7 +412,7 @@ a {
   padding-left: 2%;
   padding-right: 2%;
   height:20px; 
-  background-color:rgba(255, 0, 0, 0.733); 
+  background-color:rgba(244, 28, 28, 0.733); 
   color: var(--text-color);  
   text-align:center; 
   line-height:20px;   
@@ -335,4 +431,184 @@ a {
   line-height:20px;   
   font-size:12px; 
   border-radius:4px;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin-top: 4rem;
+}
+
+/* VIDEO STUFF */
+.video-wrapper {
+  flex: 0.5;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  z-index: -1
+}
+
+.video-wrapper video {  
+  width: 100%;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+  padding-bottom: 2%;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    width: auto ;
+    height: calc(100vh + 37px);
+    z-index: -1;
+}
+
+.overlay2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65); 
+    width: 19%;
+    height: calc(100vh);
+    z-index: -1;
+    display: flex;
+    align-items: center;
+}
+
+.afterOverlay {
+  position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 19%;
+    height: calc(100vh);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+
+.intro-text2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  text-align: center;
+  z-index: 999;
+}
+
+.intro-text2 h1 {
+  font-size: 2.8rem;  
+  margin: 0; 
+  text-align: center;
+  margin: auto;
+  color: var(--accent-color); 
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+}
+
+
+.intro-text2 p {
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(#f5f5ff);
+  flex: 1;
+}
+
+.static-intro2 {
+  font-family: 'Roboto', monospace;
+  font-size: 10px;
+  overflow: hidden;
+  text-align: left;
+  width: 20ch;
+}
+
+.contacts{
+  margin: 6%;
+  z-index: 999;
+}
+
+.contacts a {
+  position: relative;
+  padding: 3px;
+  z-index: 999;
+}
+
+.contacts a:hover {
+  transform: translateY(5px);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.scroll-indicator #arrow {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-left: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  transform: rotate(-45deg);
+  animation: bounce 2s infinite;
+  margin: 0 auto;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+  40% {
+    transform: translateY(10px) rotate(-45deg);
+  }
+  60% {
+    transform: translateY(5px) rotate(-45deg);
+  }
+}
+
+.animate-fade.fade-out {
+  opacity: 0;
+}
+
+
+/* PROJECT SPECIFIC */
+.projectCode {
+  width: 90%;
+  margin-left: 5%;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  margin-top: 1%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 7px;
+  font-size: larger;
+}
+
+.projectP {
+  margin-top: 10px; 
+  padding-left: 2%;
 }

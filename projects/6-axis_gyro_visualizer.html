@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> 6-Axis Gyro Visualizer | Devanshu's Portfolio </title>
+    <link rel="icon" type="image/x-icon" href="../images/better favicon.png">
+    <script>
+        const theme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+    </script>
+    <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">Devanshu</a>
+        <nav class="navbar">
+            <a href="../index.html#projects">Go Back?</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div style="display: flex;">
+            <h2>Basic 6-Axis Gyro Visualizer</h2>
+             <a style="margin-left: 10px;" href="https://github.com/DPandaman/6-Axis_Gyro_3D_Modeling" target="_blank">
+                <img src="../images/github.png" alt="GitHub" style="width:45px;height:45px;" />
+            </a>
+        </div>
+
+        <h1 style="color: #00ccff;"> Overview:</h1>
+            <p style="margin-top: 10px; padding-left: 2%;"> 
+                This project originally started as an experiment to see whether or not it would be possible for me to develop a real-time three-dimensional tracking system for various controlled aircraft or quadcopters. The code in the GitHub is only half of the overall project. While the code for visualizing has been uploaded, 
+                the values for pitch, roll, and yaw need to provided by another file. In this example, a Serial connection is used.
+            </p>
+
+            <img src="../images/project-one-screenshot.png" alt="Screenshot of Project One"
+            style="max-width: 100%; border-radius: 10px;" />
+
+            <img src="../images/project-one-screenshot.png" alt="Screenshot of Project One"
+            style="max-width: 100%; border-radius: 10px;" />
+
+        <br></br>
+
+        <h1 style="color: #00ccff;"> Box Model Set-up:</h1>
+            <p class="projectP">Requirements:</p>
+                <ul style="padding-left: 6%; margin-top: 5px;">
+                    <li>A 6-Axis Accelerometer/Gyroscope (UART, SPI, I2C, Wireless, etc.)</li>
+                    <li>A Serial USB connection between your Accelerometer and PC</li>
+                    <li>A Chromium-based browser (Chrome, Edge, Opera) to open this file. Safari, Firebox, and others are not supported</li>
+                </ul>
+            <p class="projectP">Clone <a style="color: #00ccff;" target="_blank" href="https://github.com/DPandaman/6-Axis_Gyro_3D_Modeling"><u>this</u></a> repo. That's it! Launch the file and connect your device. If it does not work, see troubleshooting below.</p>
+
+            <p style="margin-top: 10px; padding-left: 2%"><b><i>Due to the many acclerometers and programming options available, make sure your serial messages are in this general format!</i></b></p>
+            <div class="projectCode">
+                <code>serial.log("PRY:");</code>
+                <code>serial.log(pitch); </code>
+                <code>serial.log(","); </code>
+                <code>serial.log(roll); </code>
+                <code>serial.log(","); </code>
+                <code>serial.log(yaw\n);</code>
+                <code>//(Example Serial print) PRY:-34.2,12.4,-76.9 (no spaces + new line for each entry)</code>
+            </div>
+
+        <br></br>
+
+        <h1 style="color: #00ccff;"> Customizing:</h1>
+            <p class="projectP">The linked GitHub file contains a default purple prism to use. If you want to use a custom gltf/glb mode, replace this:</p>
+                
+             <div class="projectCode">
+                <code>const geometry = new THREE.BoxGeometry(3, 2, 1);</code>
+                <code>const material = new THREE.MeshNormalMaterial();</code>
+                <code>const model = new THREE.Mesh(geometry, material);</code>
+                <code>scene.add(model);</code>
+                <code>model.position.set(0, 0, 0);</code>
+            </div>
+
+            <p class="projectP"> with this: </p>     
+            
+            <div class="projectCode">
+                <code>const loader = new THREE.GLTFLoader();</code>
+                <code>let model;</code>
+                <code>loader.load("your_file_path.glb_or_.gltf", function(gltf) { // do not change gltf inside the function</code>
+                <code>&nbsp;&nbsp;&nbsp;model = gltf.scene;</code>
+                <code>&nbsp;&nbsp;&nbsp;model.scale.set(1.0, 1.0, 1.0);</code>
+                <code>&nbsp;&nbsp;&nbsp;model.position.set(0, 0, 0);</code>
+                <code>&nbsp;&nbsp;&nbsp;scene.add(model);</code>
+                <code>}, undefined, function(error) {</code>
+                <code>&nbsp;&nbsp;&nbsp;console.error("Error loading model:", error);</code>
+                <code>});</code>
+            </div>
+
+            <p class="projectP">You <b><i>must</i></b> also use a localHost server instead of opening the file directly with the 
+                browser. If you're opening the file directly in your browser (i.e., the path starts with file://), the 
+                loader might not work due to CORS restrictions. This easiest way is to use Python. In your terminal, run
+            </p>
+
+            <div class="projectCode">
+                <code>python -m http.server</code>  
+            </div>
+
+            <p class="projectP">and visit</p>
+
+            <div class="projectCode">
+                <code>http://localhost:8000</code>  
+            </div>
+
+            <p class="projectP">in your browser. Refresh, navigate through the directory to the correct file, and use the sliders to fine-tune as needed.</p >
+
+        <br></br>
+
+        <h1 style="color: #00ccff;"> Exporting:</h1>
+            <p class="projectP">
+                The software allows gathered data to be exported in a CSV format for a variety of use cases, including flight analysis,
+                debugging, real-time feedback, and even building a dataset for training models to fly on their own. After your flight is over,
+                press the "Export" button in the bottom left and it will automatically download. 20,000 of the last entries will be exported by 
+                default.
+
+            </p>
+
+        <br></br>
+
+        <h1 style="color: #00ccff;"> Troubleshooting Tips:</h1>
+            <p class="projectP"><b>Custom model isn't showing up:</b></p>
+                <ul style="padding-left: 6%; margin-top: 5px;">
+                    <li>Make sure the gltf/glb model has a valid path in the loader</li>
+                    <li>Right-click -> Inspect -> Console. If there is a CORS error, make sure you are using a LocalHost server instead the default browser option</li>
+                    <li>Use the 'Lighting' slider to make sure the lighting adjustment is around 1.0-1.5</li>
+                    <li>Use the 'Scale' slider and slowly increase or decrease the model size</li>
+                </ul>
+
+            <p style="margin-top: 15px; padding-left: 2%;"><b>Gyro Values are not showing up:</b></p>
+                <ul style="padding-left: 6%; margin-top: 5px;">
+                    <li>Make sure your device shows up in a serial port and is able to connect successfully </li>
+                    <li>Make sure your device is at the appropraite baud rate (default is <i>115200</i>, change if necessary)</li>
+                    <li>Make sure the values are being sent in the exact format shown</li>
+                </ul>
+
+            <p class="projectP"><b>Device not showing up on 'Connect':</b></p>
+                <ul style="padding-left: 6%; margin-top: 5px;">
+                    <li>Check if you are using a Chromium-based browser (Chrome, Edge, Opera). Safari, Firebox, and others are not supported</li>
+                    <li>Make sure your device is at the appropraite baud rate (default is <i>115200</i>, change if necessary)</li>
+                    <li>Really hard to catch, it has happened several times. Your cable may be power-only (not data), use a different cable</li>
+
+                    
+                </ul>
+
+            <p class="projectP"><b>Model gliches out or jumps around:</b></p>
+                <ul style="padding-left: 6%; margin-top: 5px;">
+                    <li>Make sure there are no long wires, loud 'noises', or vibrations around</li>
+                    <li>In your second script (one interpreting values), remove wait() or delay() functions and replace with a timer. Around 10ms should work best</li>
+                    <li>Use one of the provided filtering options or implement a custom filter to reduce jumps being sent</li>
+                </ul>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Devanshu | Thanks for checking this out!</p>
+    </footer>
+</body>
+
+</html>

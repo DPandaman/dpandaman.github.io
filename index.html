@@ -9,7 +9,7 @@
   <script>
         const theme = localStorage.getItem("theme") || "dark";
         document.documentElement.setAttribute("data-theme", theme);
-    </script>
+  </script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -22,90 +22,209 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" id="header">
     <a href="#home" class="logo"> Devanshu </a>
     <nav class="navbar">
       <a href="#home"> Home </a>
       <a href="#aboutme"> About </a>
+      <a href="#techstack"> Code </a>
       <a href="#projects"> Projects </a>
     </nav>
+  
     <button id="themeButton" onclick="themeChanger()">🌙</button>
   </header>
 
   
 
   <!-- INTRO-->
-  <section id="home" class="intro">
-    <div class="intro-text">
-      <h1 class="static-intro"> Hey, I'm Devanshu </h1>
-      <div class="contacts">
-        <a href="https://www.linkedin.com/in/devanshu-pandya/" target="_blank">
-          <img src="images/linkedin.png" alt="LinkedIn" style="width:40px;height:40px;" />
-        </a>
+  <div class="video-wrapper">
+    <video id="myVideo" width="auto" height="auto" autoplay loop muted>
+      <source src="random/newest.mp4 " type="video/mp4">
+        Dude you're missing out on this video bc it wont load. Switch to a different browser.
+    </video>
+  </div>
 
-        <a href="https://github.com/Dpandaman" target="_blank">
-          <img src="images/github.png" alt="GitHub" style="width:45px;height:45px;" />
-        </a>
+  
 
-        <!-- <a href="https://www.instagram.com/dev.pandyaaa" target="_blank">
-          <img src="images/instagram.png" alt="Instagram" style="width:40px;height:40px;" />
-        </a> -->
+  <!-- <div id="overlay"></div> -->
+    <section id="home" class="intro">
+      <div class="intro-text">
+        <!-- <h1 class="static-intro"> Hey, I'm Devanshu </h1> -->
+        <!-- <div class="contacts">
+          <a href="https://www.linkedin.com/in/devanshu-pandya/" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn" style="width:40px;height:40px;" />
+          </a>
+
+          <a href="https://github.com/Dpandaman" target="_blank">
+            <img src="images/github.png" alt="GitHub" style="width:45px;height:45px;" />
+          </a>
+
+          <a href="https://www.instagram.com/dev.pandyaaa" target="_blank">
+            <img src="images/instagram.png" alt="Instagram" style="width:40px;height:40px;" />
+          </a> 
+        </div> -->
+      </div>
+    </section>
+  <!-- </div> -->
+
+  <div class="overlay2" id="overlay2"></div>
+
+  <div class="afterOverlay">
+    <div class="intro-text2">
+        <h1 class="static-intro2"> Hey, I'm Devanshu </h1>
+        <div class="contacts">
+          <a href="https://www.linkedin.com/in/devanshu-pandya/" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn" style="width:40px;height:40px;" />
+          </a>
+
+          <a href="https://github.com/Dpandaman" target="_blank">
+            <img src="images/github.png" alt="GitHub" style="width:45px;height:45px;" />
+          </a>
+
+           <!-- <a href="https://www.instagram.com/dev.pandyaaa" target="_blank">
+            <img src="images/instagram.png" alt="Instagram" style="width:40px;height:40px;" />
+          </a> -->
+        </div>
       </div>
 
-    </div>
+      <div class="scroll-indicator">
+        <a href="#aboutme"><span id="arrow"></span></a>
+      </div>
 
-
-    <div class="intro-img">
-      <img src="images/pfp.JPG" alt="Devanshu's Headshot" style="width:400px; height:auto;">
-    </div>
-  </section>
+  </div>
 
   <!-- ABOUT ME-->
   <section id="aboutme" class="section">
 
     <div class="about-text">
       <h2> About Me </h2>
+      
       <p> Hey, nice to meet you! I'm Devanshu, a CS student at the University of Illinois at Urbana-Champaign. </p>
 
-      <p>Interests:</p>
+      <p>My Interests:</p>
       <ul style="padding-left: 2em">
-        <li> Machine learning and computer vision in real applications </li>
-        <li> Control theory for robotics and autonomous applications </li>
+        <li> Machine learning and computer vision in real-life applications </li>
+        <li> Control theory for robotics and autonomous systems </li>
         <li> Data-driven insights through statistical analysis and modeling </li>
       </ul>
 
       <p>Skills:</p>
       <ul style="padding-left: 2em">
-        <li> Languages: C/C++, Java, JS, HTML/CSS, Python</li>
-        <li> Libraries: OpenCV, Tensorflow, NumPy, Matplotlib</li>
+        <li> Languages: C/C++, JS/TS, React, Python, Java, HTML/CSS, MATLAB</li>
+        <li> Libraries: OpenCV, Norfair, Tensorflow, NumPy, Matplotlib</li>
       </ul>
 
-      <p>Next Project: BlankSpace </p>
+      <p>Next Project: BlankSpace for Google Maps </p>
     </div>
 
-    <div class="video-wrapper">
-      <video width="100" height="500" autoplay loop muted>
-        <source src="random/movie.MP4" type="video/mp4">
-          Dude you're missing out on this video bc it wont load. Switch to a different browser.
-      </video>
+    <div class="intro-img">
+      <img src="images/pfp.JPG" alt="Devanshu's Headshot" style="width:350px; height:auto;">
     </div>
     
   </section>
 
+  <!-- TECH STACK-->
+  <section id="techstack" class="section">
+    <h2> Tech Stack </h2>
+
+    <div id="stackHolder">
+      <div class="scene">
+        <div class="carousel">
+          <div class="carousel__cell" id="js"><a href="#projects"><img src="carouselImages/JavaScript.png"></a></div>
+          <div class="carousel__cell" id="cpp"><a href="#projects"><img src="carouselImages/CPP.png"></a></div>
+          <div class="carousel__cell" id="python"><a href="#projects"><img src="carouselImages/Python-Dark.png"></a></div>
+          <div class="carousel__cell" id="opencv"><a href="#projects"><img src="carouselImages/OpenCV-Dark.png"></a></div>
+          <div class="carousel__cell" id="gcp"><a href="#projects"><img src="carouselImages/GCP-Dark.png"></a></div>
+          <div class="carousel__cell" id="react"><a href="#projects"><img src="carouselImages/React-Dark.png"></a></div>
+          <div class="carousel__cell" id="typescript"><a href="#projects"><img src="carouselImages/TypeScript.png"></a></div>
+          <div class="carousel__cell" id="htmlcss"><a href="#projects"><img src="carouselImages/HTMLCSS.png"></a></div>
+          <div class="carousel__cell" id="threejs"><a href="#projects"><img src="carouselImages/ThreeJS-Dark.png"></a></div>
+        </div>
+      </div>
+
+      <div id="stackDetails">
+        <div id="detailTitle">
+          <h3 id="detailText"> [Please Ignore] </h3>
+        </div>
+
+        <div id="detailText">
+          <p id="usedIn"> used in...</p>
+        </div>
+        <p id="projectsUsed">[Please Ignore]</p>
+      </div>
+    </div>
+  </section>
+
   <!-- PROJECTS-->
   <section id="projects" class="section">
-    <h2> Projects </h2>
+    <h2> Recent Projects </h2>
 
     <div class="projects-grid">
 
-      
+      <!-- tldr -->
+      <div class="project">
+        <h4><a href="projects/under_construction.html" class="project-title">Glint [under construction]</a></h4>
+        <div class="tag-container">
+          <div id="softwaretag">Software</div>
+          <div id="hardwaretag">Hardware</div>
+          <div id="prototypetag">Prototype</div>
+        </div>
+        <p> See more, do more. Your glasses just got a lot more stylish </p>
+        <img src="projects/construction_image.png">
+      </div>
+
+      <!-- tldr -->
+      <!-- <div class="project">
+        <h4><a href="projects/under_construction.html" class="project-title">tldr [under construction]</a></h4>
+        <div class="tag-container">
+          <div id="softwaretag">Software</div>
+        </div>
+        <p>🤫🤫🤫</p>
+        <img src="random/image-coming-soon-placeholder.png">
+      </div> -->
+
+      <!-- BlankSpace -->
+      <!-- <div class="project">
+        <h4><a href="projects/under_construction.html" class="project-title">BlankSpace [under construction]</a></h4>
+        <div class="tag-container">
+          <div id="softwaretag">Software</div>
+        </div>
+        <p>Crowdsourcing Canvases for Google Maps</p>
+        <img src="projectimages/arm_thumbnail.jpg"> 
+      </div>  -->
+
+      <!-- Track My Data-->
+      <div class="project">
+        <h4><a href="projects/under_construction.html" class="project-title">TrackMyData [under construction]</a></h4>
+        <div class="tag-container">
+          <div id="softwaretag">Software</div>
+        </div>
+        <!-- <p>A Chrome Extension that reveals how your personal data travels online – all in real-time</p> -->
+        <p>See who and where your online data travels to – all in real-time</p>
+        <img src="projects/construction_image.png">
+      </div>
+
+
+      <!-- Basic Gyro Visualizer -->
+      <div class="project">
+        <h4><a href="projects/6-axis_gyro_visualizer.html" class="project-title">Gyroscope PRY Modeling</a> </h4>
+        <div class="tag-container">
+          <div id="softwaretag">Software</div>
+          <div id="hardwaretag">Hardware</div>
+          <div id="prototypetag">Prototype</div>
+        </div> 
+        
+        <p>Basic tool to visualize 3D movement with accelerometers and gyros</p>
+        <img src="projects/construction_image.png">
+      </div>
+
       <!-- Van Emde Boas Tree -->
       <div class="project">
         <h4><a href="projects/vEBTree.html" class="project-title">van Emde Boas Tree</a></h4>
         <div class="tag-container">
           <div id="softwaretag">Software</div>
         </div>
-        <p>Exploration of <i>O(log(log(U)))</i> trees in C++</p>
+        <p id="notWork">Exploration of <i>O(log(log(U)))</i> trees in C++</p>
         <img src="projectimages/veb_thumbnail.png">
       </div>
 
@@ -120,6 +239,18 @@
         
         <p>Because why not</p>
         <img src="projectimages/arm_thumbnail.jpg">
+      </div>
+
+      <!-- Solar Car -->
+      <div class="project">
+        <h4><a href="https://www.illinisolarcar.com/" target="_blank" class="project-title">Calypso Analysis</a> </h4>
+        <div class="tag-container">
+          <div id="softwaretag">Software</div>
+          <div id="hardwaretag">Hardware</div>
+        </div> 
+        
+        <p>Working on ISC's Calypso to determine performance inefficiencies and improvements</p>
+        <img src="projectimages/calypso.jpg">
       </div>
 
     </div>
