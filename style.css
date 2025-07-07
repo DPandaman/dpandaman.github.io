@@ -243,8 +243,9 @@ a {
 
 .carousel__cell {
   position: absolute;
-  width: 190px;
-  height: 120px;
+  /* width: 190px;
+  height: 120px; */
+  width: 22%;
   left: 40%;
   top: 5%; 
   line-height: 116px;
@@ -456,7 +457,8 @@ a {
   top: 0;
   left: 0;
   width: 100%; 
-  height: 100vh; 
+  height: 100%;
+  object-fit: cover; 
   z-index: -1;
 }
 
@@ -468,7 +470,9 @@ a {
 .video-wrapper video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+
+  /* use contain to see full video (this will add margins and stuff) or use cover to make sure there is no grey space (but video will get cropped) */
+  object-fit: cover;
 }
 
 
