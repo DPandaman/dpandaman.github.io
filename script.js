@@ -16,15 +16,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const header = document.getElementById("header");
 const arrow = document.getElementById("arrow");
-header.style.visibility = "hidden";
+header.style.display = "none";
 const scrollThreshold = 800; 
 const arrowThreshold = window.innerHeight / 3;
 
 window.addEventListener("scroll", function() {
   if (window.scrollY > scrollThreshold) {
-    header.style.visibility = "visible"; 
+    header.style.display = "flex"; 
   } else {
-    header.style.visibility = "hidden";     
+    header.style.display = "none";     
   }
 
   if (window.scrollY > arrowThreshold) {
