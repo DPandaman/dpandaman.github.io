@@ -30,6 +30,10 @@
   --section-bg: var(--section-bg-dark);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /* overflow-y: scroll;          
   scrollbar-width: none; 
@@ -163,6 +167,7 @@ a {
   margin-left: 5%;
   margin-right: 5%;
   z-index: 99;
+  scroll-margin-top: 5rem;
 }
 
 .section h2 {
@@ -449,6 +454,7 @@ a {
   position: relative;
   height: 100vh;
   overflow: hidden;
+  /* scroll-margin-top: 0; */
 }
 
 .video-wrapper {
@@ -556,12 +562,30 @@ a {
   flex: 1;
 }
 
-.static-intro2 {
+/* .static-intro2 {
   font-family: 'Roboto', monospace;
   font-size: 10px;
   overflow: hidden;
   text-align: left;
   width: 20ch;
+} */
+
+.static-intro2 {
+  font-family: 'Roboto', monospace;
+  font-size: 2.2rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .static-intro2 {
+    font-size: 1.5rem;
+  }
+
+  .contacts img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .contacts{
