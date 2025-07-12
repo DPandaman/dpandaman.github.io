@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const header = document.getElementById("header");
 const arrow = document.getElementById("arrow");
+header.classList.add("headernay");
 header.style.display = "none";
 const scrollThreshold = 800; 
 const arrowThreshold = window.innerHeight / 3;
@@ -23,8 +24,14 @@ const arrowThreshold = window.innerHeight / 3;
 window.addEventListener("scroll", function() {
   if (window.scrollY > scrollThreshold) {
     header.style.display = "flex"; 
+    header.classList.remove("headernay");
+    header.classList.add("headeryay");
+    // console.log(header.className);
   } else {
-    header.style.display = "none";     
+    header.style.display = "none"; 
+    header.classList.add("headernay");
+    header.classList.remove("headeryay");
+    // console.log(header.className); 
   }
 
   if (window.scrollY > arrowThreshold) {

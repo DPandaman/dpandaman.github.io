@@ -61,6 +61,15 @@ body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
   z-index: 997;
   height: 70px;
   background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 1s;
+}
+
+.headeryay {
+  opacity: 1;
+}
+
+.headernay {
+  opacity: 0;
 }
 
 .logo {
@@ -273,6 +282,7 @@ a {
   width: 80%;
   height: auto;
   transform: translateY(-5px);
+  transition: 0.2s;
   /* box-shadow: 0 20px 20px rgba(0, 204, 255, 0.4); */
 }
 
