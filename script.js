@@ -42,6 +42,7 @@ window.addEventListener("scroll", function() {
   }
 });
 
+
 function unfade(element) {
     var op = 0.0;  // initial opacity
     element.style.display = 'flex';
@@ -174,5 +175,5 @@ function rotateCarousel() {
   carousel.style.transform = 'translateZ(-288px) rotateY(' + angle + 'deg)';
 }
 
-const interval = setInterval(rotateCarousel, 3500);
+const interval = setInterval(rotateCarousel, 2500);
 interval.clearInterval();
