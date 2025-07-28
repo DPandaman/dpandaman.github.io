@@ -117,7 +117,7 @@ const iconMap = new Map ([
 const projectMap = new Map ([
   [0, ["TrackMyData", "BlankSpace for Google Maps", "Gyro PRY Modeling"]],
   [1, ["The van Emde Boas Tree", "Gyro PRY Modeling"]],
-  [2, ["Illini Solar Car Calypso's RR", "VoxLink"]],
+  [2, ["Illini Solar Car Calypso's RR", "VoxLink", "tldr"]],
   [3, ["Work for ShotHawk.ai", "Integration with Norfair"]],
   [4, ["BlankSpace for Google Maps", "VoxLink"]],
   [5, ["BlankSpace for Google Maps"]],
