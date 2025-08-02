@@ -360,7 +360,7 @@ a {
   /* border: 2px solid rgba(239, 238, 238, 0.06); */
   padding: 1.5rem;
   border-radius: 15px;
-  
+  height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -384,15 +384,22 @@ a {
   width: 100%;
 }
 
-.project-title {
+/* .project-title {
   font-size: 1.4rem;
-  color: var(--accent-color);
+  color: var(--text-color);
+  text-decoration: none;
+} */
+
+.project-title h4{
+  font-size: 1.4rem;
+  color: var(--text-color);
   text-decoration: none;
 }
 
+/* 
 .project-title:hover {
   text-decoration: underline;
-}
+} */
 
 .footer {
   text-align: center;
