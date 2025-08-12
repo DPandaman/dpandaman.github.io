@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> tldr | Devanshu's Portfolio </title>
+    <link rel="icon" type="image/x-icon" href="../images/better favicon.png">
+    <script>
+        const theme = localStorage.getItem("theme") || "light";
+        document.documentElement.setAttribute("data-theme", theme);
+    </script>
+    <link rel="stylesheet" href="../style.css" />
+</head>
+
+<body>
+    <header class="header">
+        <a href="../index.html" class="logo">Devanshu</a>
+        <nav class="navbar">
+            <a href="../index.html#projects">Go Back?</a>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div style="display: flex;">
+            <h2>tldr</h2>
+             <a style="margin-left: 10px;" href="https://github.com/DPandaman/tldr" target="_blank">
+                <img src="../images/github.png" alt="GitHub" style="width:45px;height:45px;" />
+            </a>
+        </div>
+
+        <h1 style="color: #00ccff;"> Overview:</h1>
+            <p style="margin-top: 10px; padding-left: 2%;"> 
+                tldr is a lightweight command-line tool that helps you quickly understand Python error messages and suggests fixes so you can debug faster and code smarter. It natively handles errors and provides solutions (and edits files if needed) for most basic cases, though it has AI support if needed. All local, no API keys needed!
+            </p>
+
+            <p style="margin-top: 20px; padding-left: 2%;"> 
+                Check out more details about tldr and the project on the <a style="color: #00ccff" href="https://github.com/DPandaman/tldr">GitHub repo</a>. Installing tldr is as simple as running this in your terminal:
+            </p>
+
+            <div class="projectCode">
+                <code>pip install tldrcli</code>  
+            </div>
+
+            <!-- <div style="display: flex; justify-content: center; margin-top: 2rem">
+                <video id="myVideo" width="35%" height="auto" autoplay loop muted playsinline>
+                    <source src="../random/newest.mp4 " type="video/mp4" alt="still working">
+                    Dude you're missing out on this video bc it wont load. Switch to a different browser.
+                </video>
+            </div> -->
+        
+        <br></br>
+
+        
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Devanshu | Thanks for checking this out!</p>
+    </footer>
+</body>
+
+</html>
