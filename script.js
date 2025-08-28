@@ -114,6 +114,8 @@ const iconMap = new Map ([
   [8, document.getElementById("threejs")]
 ]);
 
+const techList = ["JavaScript", "C++", "Python", "OpenCV", ""]
+
 const projectMap = new Map ([
   [0, ["TrackMyData", "MapKit for Google Maps", "Gyro PRY Modeling"]],
   [1, ["The van Emde Boas Tree", "Gyro PRY Modeling"]],
@@ -130,11 +132,13 @@ const projectMap = new Map ([
 const language = document.getElementById("detailText");
 const projects = document.getElementById("projectsUsed");
 const favicon = document.getElementById("favicon");
-language.innerHTML = "<b>" + map.get(0) + "</b>";
+// language.innerHTML = "<b>" + map.get(0) + "</b>";
 const carousel = document.querySelector('.carousel');
 var numIcons = 9;
 var selectedIndex = 0;
+// techUsed = document.getElementById("stacksUsed");
 updateProjects(0);
+// updateProjectsList(0);
 
 function updateProjects(mapIndex) {
   let s = "<ul>"
@@ -143,6 +147,20 @@ function updateProjects(mapIndex) {
   }
   s += "</ul>"
   projects.innerHTML = s;
+
+
+  // let s = "";
+  // for (var i = 0; i < map.size; i++) {
+  //   if (i == mapIndex) {
+  //     let bold = "<span class='highlight'>" + map.get(mapIndex) + "</span><br>"; 
+  //     s += bold;
+  //   } else {
+  //     s += map.get(i) + "<br>";
+  //   }
+  // }
+  // console.log(s);
+  // techUsed.innerHTML = s;
+  
 
   let opIndex1 = (mapIndex + 4) % numIcons;
   let opIndex2 = (mapIndex + 5) % numIcons;
@@ -164,13 +182,41 @@ function updateProjects(mapIndex) {
   iconMap.get(mapIndex).querySelector("img").style.boxShadow = "0 20px 20px rgba(0, 204, 255, 0.4)";
   iconMap.get(prevIndex).querySelector("img").style.boxShadow = "none";
 
-
 }
+
+function updateProjectsList(mapIndex) {
+  // let s = "<ul>"
+  // for (var i = 0; i < map.size; i++) {
+  //   if (i == mapIndex) {
+  //     let bold = "<li>" + "<b>" + "<i>" + map.get(mapIndex) + "</i>" + "</b>" + "</li>";
+  //     s += bold;
+  //   } else {
+  //     s += "<li>" + map.get(mapIndex) + "</li>";
+  //   }
+  // }
+  // s += "</ul>"
+  // console.log(s);
+  // techUsed.innerHTML = s;
+
+  let s = "";
+  for (var i = 0; i < map.size; i++) {
+    if (i == mapIndex) {
+      let bold = "<span class='highlight'>" + map.get(mapIndex) + "</span><br>"; 
+      s += bold;
+    } else {
+      s += map.get(i) + "<br>";
+    }
+  }
+  console.log(s);
+  techUsed.innerHTML = s;
+}
+
 
 function rotateCarousel() {
   selectedIndex++;
-  language.innerHTML = "<b>" + map.get(selectedIndex % numIcons) + "</b>";
+  // language.innerHTML = "<b>" + map.get(selectedIndex % numIcons) + "</b>";
   updateProjects(selectedIndex % numIcons);
+  // updateProjectsList(selectedIndex % numIcons);
   var angle = selectedIndex / numIcons * -360;
   carousel.style.transform = 'translateZ(-288px) rotateY(' + angle + 'deg)';
 }
