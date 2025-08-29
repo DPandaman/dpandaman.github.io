@@ -132,7 +132,7 @@ const projectMap = new Map ([
 const language = document.getElementById("detailText");
 const projects = document.getElementById("projectsUsed");
 const favicon = document.getElementById("favicon");
-// language.innerHTML = "<b>" + map.get(0) + "</b>";
+language.innerHTML = "<b>" + map.get(0) + "</b>";
 const carousel = document.querySelector('.carousel');
 var numIcons = 9;
 var selectedIndex = 0;
@@ -214,7 +214,7 @@ function updateProjectsList(mapIndex) {
 
 function rotateCarousel() {
   selectedIndex++;
-  // language.innerHTML = "<b>" + map.get(selectedIndex % numIcons) + "</b>";
+  language.innerHTML = "<b>" + map.get(selectedIndex % numIcons) + "</b>";
   updateProjects(selectedIndex % numIcons);
   // updateProjectsList(selectedIndex % numIcons);
   var angle = selectedIndex / numIcons * -360;
