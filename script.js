@@ -120,7 +120,7 @@ const projectMap = new Map ([
   [0, ["TrackMyData", "MapKit for Google Maps", "Gyro PRY Modeling"]],
   [1, ["The van Emde Boas Tree", "Gyro PRY Modeling"]],
   [2, ["Illini Solar Car Calypso's RR", "VoxLink", "tldr"]],
-  [3, ["Work for ShotHawk.ai", "Integration with Norfair"]],
+  [3, ["Work for ShotHawk.ai", "Gym-Genius"]],
   [4, ["MapKit for Google Maps", "VoxLink"]],
   [5, ["BlankSpace for Google Maps"]],
   [6, ["MapKit for Google Maps", "TrackMyData"]],
