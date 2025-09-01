@@ -939,7 +939,7 @@ a {
   padding: 20px 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  width: 40%;
+  width: 41%;
   z-index: 1;
   position: relative;
 }
@@ -950,27 +950,32 @@ a {
   transition: 0.2s;
 }
 
-.stanford {
-  background: linear-gradient(135deg, #8C1515 0%, #B83A4B 100%);
-  color: #fff;
+.tbp {
+  background: linear-gradient(135deg, #4E2D19 0%, #634d40 100%);
+  color: #111;
 }
 
 /* .isc {
   background: linear-gradient(135deg, #FF7F0F 0%, #13294B 100%);
   color: #fff;
 } */
- .isc {
+.isc {
   background: linear-gradient(135deg, #c25a00 0%, #001940 100%);
   color: #fff;
 }
 
-.tbp {
-  background: linear-gradient(135deg, #4E2D19 0%, #634d40 100%);
-  color: #111;
+.asme {
+  background: linear-gradient(135deg, #2543c5 0%, #a1a1a1 100%);
+  color: #fff;
 }
 
 .enopi {
   background: linear-gradient(135deg, #03bb50 0%, #0d5702 100%);
+  color: #fff;
+}
+
+.stanford {
+  background: linear-gradient(135deg, #8C1515 0%, #B83A4B 100%);
   color: #fff;
 }
 
