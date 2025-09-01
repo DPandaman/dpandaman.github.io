@@ -315,6 +315,7 @@ a {
   width: 30%;
   background: rgba(230, 229, 229, 0.14);
   background: rgba(239, 238, 238, 0.08);
+  border: 2px solid #252525;
   border-radius: 15px;
   list-style-type: none;
   /* display: flex; */
@@ -396,7 +397,7 @@ a {
   background: rgba(230, 229, 229, 0.14);
   background: rgba(239, 238, 238, 0.14);
   background: rgba(239, 238, 238, 0.08);
-  /* border: 2px solid rgba(239, 238, 238, 0.06); */
+  border: 2px solid #252525;
   padding: 1.5rem;
   border-radius: 15px;
   height: 100%;
@@ -977,17 +978,20 @@ a {
   margin: 0 0 5px;
   font-size: 1.2rem;
   color: var(--text-color);
+  color: var(--dark-text);
 }
 
 .experience-content h4 {
   margin: 0 0 10px;
   font-size: 1rem;
   color: var(--text-color);
+  color: var(--dark-text);
 }
 
 .experience-content p {
   font-size: 0.95rem;
   color: var(--text-color);
+  color: var(--dark-text);
   line-height: 1.5;
 }
 
