@@ -984,8 +984,13 @@ a {
   color: #fff;
 }
 
+/* .ibc {
+  background: linear-gradient(135deg, #000ba3 0%, #000640 100%);
+  color: #fff;
+} */
+
 .asme {
-  background: linear-gradient(135deg, #2543c5 0%, #a1a1a1 100%);
+  background: linear-gradient(135deg, #1537ce 0%, #a1a1a1 100%);
   color: #fff;
 }
 
