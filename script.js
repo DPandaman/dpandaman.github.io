@@ -70,6 +70,21 @@ function fade(element) {
     }, 50);
 }
 
+let junkyardPressed = false;
+const glichButton = document.getElementById("glitch-button");
+const noChancetext = document.getElementById("projectsnochance");
+noChancetext.style.visibility = "hidden";
+
+glichButton.addEventListener("click", function () {
+  if (!junkyardPressed) {
+    noChancetext.style.visibility = 'visible';
+    junkyardPressed = true;
+  } else {
+    noChancetext.style.visibility = 'hidden';
+    junkyardPressed = false;
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const video = document.getElementById("myVideo");
   const overlay = document.getElementById("overlay2");
@@ -223,6 +238,4 @@ function rotateCarousel() {
 
 const interval = setInterval(rotateCarousel, 2500);
 interval.clearInterval();
-
-
 
