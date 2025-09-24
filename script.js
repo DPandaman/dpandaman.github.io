@@ -73,14 +73,17 @@ function fade(element) {
 let junkyardPressed = false;
 const glichButton = document.getElementById("glitch-button");
 const noChancetext = document.getElementById("projectsnochance");
-noChancetext.style.visibility = "hidden";
+// noChancetext.style.visibility = "hidden";
+noChancetext.style.display = "none";
 
 glichButton.addEventListener("click", function () {
   if (!junkyardPressed) {
-    noChancetext.style.visibility = 'visible';
+    // noChancetext.style.visibility = 'visible';
+    noChancetext.style.display = 'block';
     junkyardPressed = true;
   } else {
-    noChancetext.style.visibility = 'hidden';
+    // noChancetext.style.visibility = 'hidden';
+    noChancetext.style.display = 'none';
     junkyardPressed = false;
   }
 });
