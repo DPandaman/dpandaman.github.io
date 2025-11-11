@@ -1,3 +1,15 @@
+if (screen.width < 1000) {
+  // document.getElementById("small_screen_popup").classList.add("active");
+  document.getElementById("small_screen_popup").style.visibility = 'visible';
+  document.getElementById("small_screen_popup").style.opacity = 1;
+  console.log("small screen");
+}
+
+document.getElementById("small_screen_close").addEventListener("click", function () {
+  document.getElementById("small_screen_popup").style.visibility = 'none';
+  document.getElementById("small_screen_popup").style.opacity = 0;
+});
+
 function themeChanger() {
     const root = document.documentElement;
     const currentTheme = root.getAttribute('data-theme');

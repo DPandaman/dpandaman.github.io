@@ -64,6 +64,67 @@ body {
 
 body::-webkit-scrollbar, body::-webkit-scrollbar-button { display: none; }
 
+.small_screen_overlay {
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .small_screen_overlay.active {
+    visibility: visible;
+    opacity: 1;
+  } */
+
+  .popup {
+    background: #000000;
+    border-radius: 5px;
+    width: 30%;
+    padding: 20px;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .popup h2 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-family: Tahoma, Arial, sans-serif;
+  }
+
+  .popup button {
+    border: none;
+    padding: 5px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+  }
+
+  .popup .close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .popup .close:hover {
+    color: #06D85F;
+  }
+
+  .popup .content {
+    max-height: 200px;
+    overflow: auto;
+  }
+
+
+
 .header {
   position: relative;
   display: flex;
