@@ -73,6 +73,7 @@
       max-width: 1100px;
       background: var(--bg-secondary);
       padding: 20px;
+      margin-top: 10px;
       border-radius: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       cursor: pointer;
@@ -125,7 +126,7 @@
   </header>
 
   <div class="blog-container">
-    <div class="blog-post">
+    <div class="blog-post" data-preview="Is AI ">
       <h2 class="blog-title">AI: Artificial Intelligence or Almost Impractical?</h2>
       <div class="blog-meta">November 14, 2025 • Devanshu</div>
 
@@ -160,6 +161,33 @@
     </div>
   </div>
 
+  <div class="blog-container">
+    <div class="blog-post">
+      <h2 class="blog-title"> Branding >= Skills? </h2>
+      <div class="blog-meta">December 11, 2025 • Devanshu</div>
+
+      <div class="blog-content">
+        <p> Over the last decade, the idea of what counts as a “skill” has quietly undergone a transformation. For most of modern history, being skilled meant mastering a specific craft: from blacksmiths in the medieval era to machinists in the Industrial Revolution, learning your craft was a time-intensive process that defined the trajectory you would follow for the rest of your career. The expectation was that once you learned the tools and techniques of your trade, you could rely on that knowledge for the rest of your life without needing to adapt. </p>
+
+        <p> But today, technology is evolving so rapidly that the half-life of any single skill is shrinking. Entire software platforms rise and fall within a few years, new programming tools replace older ones almost overnight, and business technologies update faster than CS374 can update its website (great and helpful class, but we could really use some Illini Blue and Orange on there!). Many trending roles today including roles such as “data analyst,” “AI product manager,” or “cloud engineer” didn’t exist a decade ago, yet now they’re among the most in-demand positions in the job market. </p>
+
+        <p> So what really matters now?</p>
+
+        <p> While hard skills still matter, they no longer stand on their own. Technology is advancing too quickly, and industries are becoming too interconnected for any single skill to remain sufficient. Moreover, with the advent of free AI-tools, it is becoming increasingly easier for people to perform tasks that once required specialized training in a manner of minutes. Instead, the focus has shifted toward adaptability; the ability to learn, unlearn, and relearn as tools, workflows, and expectations evolve. Employers increasingly value people who can bridge disciplines, communicate across teams, and pick up new technologies without needing months of training. In this new environment, the most valuable “skill” is not mastery of a single domain, but the capacity to move fluidly between many. </p>
+            
+        <p> Similarly, as skills become less permanent, personal branding takes on a new level of importance. In the past, a resume could center on a fixed set of technical competencies and job titles. Today, however, employers are often less interested in what tools someone has mastered and more interested in how they think, learn, and communicate their value. Personal branding is more about signaling adaptability, curiosity, and growth instead of listing static qualifications. In a rapidly evolving job market, a strong personal brand helps individuals stand out not by claiming expertise in every new technology, but by demonstrating a clear narrative of learning and evolution. This shift reflects a broader change in how skill itself is evaluated: not as a checklist, but as a story of progression. </p>
+
+        <p> As Gretchen Holquist, Vice President of Marketing at Ultima, said at a talk on the UIUC campus, though your skills are what keeps you in the door, it is your personal branding that gets you inside first. In many ways, our personal brand represents our professional reputation. Everything we post, share, or create contributes to how others perceive our skills, judgment, and values. Employers, colleagues, and collaborators often form their first impressions based on our digital presence, long before meeting you in person. This means that our social media profiles, portfolio, and blog are not just showcases of our work, but rather they are reflections of who we are as a professional.  </p>
+
+        <p> One of the simplest yet most powerful ways to build and maintain your personal brand is by creating a professional portfolio. These platforms serve as evidence of your skills, thought process, and growth over time. A well-organized portfolio can showcase projects, case studies, or reflections on topics relevant to your field, and a blog on the side demonstrates your ability to communicate ideas clearly and engage with trends in technology and management. A portfolio and blog become living proof of your hybrid skills, helping potential employers see not just what you can do, but how you think and approach challenges. </p>
+
+        <p> Ultimately, the modern industry demands more than mastery of a single task or tool like it did in the past. Personal branding has emerged as a critical factor in how others perceive our value, serving as a reflection of both our reputation and mindsets. By understanding and showcasing hybrid skills and maintaining a thoughtful digital presence, we can stand out in an increasingly competitive and technology-driven world. </p>
+      
+      </div>
+    </div>
+  </div>
+
+
   <div id="fullPost" class="full-post"></div>
 
   <script>
@@ -167,12 +195,14 @@
     const fullPost = document.getElementById('fullPost');
     const container = document.querySelector('.blog-container');
 
+    holder = ["Is AI as magical as we really think?", "Your Personal Brand in the Modern Age"]
+
     // PREVIEW LOGIC — show only first sentence
-    posts.forEach(post => {
+    posts.forEach((post, index) => {
       const content = post.querySelector('.blog-content');
       const fullText = content.innerHTML;
 
-      const firstSentence = "Is AI as magical as we really think?";
+      const firstSentence = holder[index];
       post.dataset.fullContent = fullText;
 
       content.innerHTML = `<p>${firstSentence}</p>`;
