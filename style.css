@@ -1057,6 +1057,11 @@ a {
   transition: 0.2s;
 }
 
+.syf {
+  background: linear-gradient(135deg, #B38600 0%, #B58600 100%);
+  color: #111;
+}
+
 .tbp {
   background: linear-gradient(135deg, #4E2D19 0%, #634d40 100%);
   color: #111;
