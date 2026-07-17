@@ -1070,6 +1070,15 @@ a {
   transition: 0.2s;
 }
 
+.aws {
+  background: linear-gradient(135deg, #252F3E 0%, #FF9900 100%);
+  color: #111;
+}
+
+.jd {
+  background: linear-gradient(135deg, #367C2B 0%, #FFDE00 100%);
+  color: #111;
+}
 
 .syf {
   background: linear-gradient(135deg, #B38600 0%, #B58600 100%);
